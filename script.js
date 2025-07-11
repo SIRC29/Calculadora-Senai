@@ -20,6 +20,9 @@ function calcular() {
      else if (operador === '*') {
         valorAtual = anterior * atual;
     }
+        else if (operador === '%') {
+      valorAtual = valorAnterior * valorAtual / 100;
+    }
      else if (operador === '/') {
         if (atual === 0) {
             alert('Divisão por zero não é permitida.');
@@ -70,7 +73,10 @@ document.getElementById('equal').addEventListener('click', () => {
    }
    else if (operador === '*') {
        valorAtual = valorAnterior * valorAtual;
-   }
+       
+   }   else if (operador === '%') {
+      valorAtual = valorAnterior * valorAtual / 100;
+    }
    else if (operador === '/') {
        if (valorAtual === 0) {
            alert('Divisão por zero não é permitida.');
