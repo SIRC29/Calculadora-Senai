@@ -7,6 +7,30 @@ let novoNumero = false;
 function atualizarDisplay() {
     display.textContent = valorAtual;
 }
+function calcular() {
+    let anterior = parseFloat(valorAnterior);
+    let atual = parseFloat(valorAtual);
+
+    if (operador === '+') {
+        valorAtual = anterior + atual;
+    }
+     else if (operador === '-') {
+        valorAtual = anterior - atual;
+    }
+     else if (operador === '*') {
+        valorAtual = anterior * atual;
+    }
+     else if (operador === '/') {
+        if (atual === 0) {
+            alert('Divisão por zero não é permitida.');
+            return;
+        }
+        valorAtual = anterior / atual;
+    }
+    valorAtual = valorAtual.toString();
+    novoNumero = true;
+    atualizarDisplay();
+}
 document.querySelectorAll('[data-num]').forEach((botao) => {
     botao.addEventListener('click', () => {
         if (novoNumero) {
